@@ -40,7 +40,7 @@ def get_occurrences(pattern, text):
     text_length = len(text)
     pattern_length = len(pattern)
 
-    rm = pow(multiplier, 1, hashmod)
+    rm = pow(multiplier, pattern_length - 1, hashmod)
     p_hash = t_hash = 0
 
     for i in range (pattern_length) :
@@ -50,7 +50,7 @@ def get_occurrences(pattern, text):
     occurrences = []
 
     for i in range (text_length - pattern_length + 1):
-        if hash(pattern) == hash(text[i:i+pattern_length]):
+        if hash(pattern) == hash(text[i : i + pattern_length]):
             occurrences.append(i)
 
     if i < text_length - pattern_length:
