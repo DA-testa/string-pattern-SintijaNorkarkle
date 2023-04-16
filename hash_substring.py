@@ -32,7 +32,7 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     # this function should find the occurances using Rabin Karp alghoritm 
     
-    if len(pattern) > len(text)
+    if len(pattern) > len(text):
         return []
     
     hashmod = 10**9 + 7
