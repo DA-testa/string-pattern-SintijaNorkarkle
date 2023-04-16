@@ -8,7 +8,7 @@ def read_input():
     # read two lines 
     # first line is pattern 
     # second line is text in which to look for pattern 
-    source = input("Enter the input source: ")
+    source = input()
     if "I" in source:
         pattern = input()
         text = input()
