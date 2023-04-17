@@ -56,12 +56,12 @@ def get_occurrences(pattern, text):
         t_hash = (pow(multiplier, 1, hashmod) * t_hash + ord(text[i])) % hashmod
 
     # tiek izveidots tukšs saraksts, kurā tiks saglabātas meklējamo rakstzīmju virkņu atrašanās vietas tekstā
-    occurrences = []
+    list = []
 
     # tiek salīdzinātas hash vērtības, lai atrastu visus vienādos fragmentus, kurus pēc tam pievieno sarakstam
     for i in range (text_length - pattern_length + 1):
         if hash(pattern) == hash(text[i : i + pattern_length]):
-            occurrences.append(i)
+            list.append(i)
 
     # ja visa virkne nav pārbaudīta, tad turpina to darīt un pārbauda, vai ir vēl kāda vieta, kur ir vienādi fragmenti
     if i < text_length - pattern_length:
@@ -72,7 +72,7 @@ def get_occurrences(pattern, text):
             t_hash += hashmod
     
     # and return an iterable variable
-    return occurrences
+    return list
 
 
 # this part launches the functions
